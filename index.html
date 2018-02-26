@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+  
+  <title>RPS-v1</title>
+  
+  
+  
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet"> 
+   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet"> 
+   <link rel="stylesheet" type="text/css" href="css/grid.css">
+  
+<audio id="heartNeg" src=" https://s3.us-east-2.amazonaws.com/rpsv1/126420__cabeeno-rossley__game-noises-1.wav" ></audio>
+
+<audio id="heartGain" src=" https://s3.us-east-2.amazonaws.com/rpsv1/126422__cabeeno-rossley__level-up.wav" ></audio>
+
+<audio id="select" src=" https://s3.us-east-2.amazonaws.com/rpsv1/126418__cabeeno-rossley__button-select.wav" ></audio>
+
+<audio id="bgm" src="https://s3.us-east-2.amazonaws.com/rpsv1/BeepBox-Song.wav" loop="loop"></audio>
+
+</head>
+
+<body>
+	 <div class="container">
+
+	 	<!--Page Top-->
+
+<div class="head">
+
+
+	<h1 id="subText"> <button id="musicButton"></button></h1>
+  	<h1>Rock, Paper, Scissors!</h1>
+
+  	<div class="hearts">
+
+  		<img id="heart1" src="https://drive.google.com/uc?export=view&id=16QtVLa0mUQzgZSV1j0QCAXPQmo-vFy-Q">
+  		<img id="heart2" src="https://drive.google.com/uc?export=view&id=16QtVLa0mUQzgZSV1j0QCAXPQmo-vFy-Q">
+  		<img id="heart3" src="https://drive.google.com/uc?export=view&id=16QtVLa0mUQzgZSV1j0QCAXPQmo-vFy-Q">
+  		<img id="heart4" src="https://drive.google.com/uc?export=view&id=16QtVLa0mUQzgZSV1j0QCAXPQmo-vFy-Q">
+
+
+  		
+  	</div>
+
+  </div>
+
+  <!--Weapon Selection-->
+
+  <div class="main">
+
+  	
+
+	<div class="a"  id="rock">
+	</div>
+
+	<div class="b" id="paper">
+	</div>
+
+	<div class="c"  id="scissors">
+	</div>
+
+		<div class="flavorText d">
+			<p id="flavorText">Choose your weapon!</p>
+		</div>
+
+
+</div>
+
+	<!--Play Button Area-->
+
+<div class="play">
+
+<div class="gameFeedback">
+	<p id="feedBack">Can you get 15 wins?
+	</p>
+</div>
+
+
+
+<div class="playArea">
+	<button class="hide" id="playbutton" onclick="playRound()"><span id="tryAgain">
+	Play!</span></button>
+</div>
+
+</div>
+
+<!--PAGE BOTTOM-->
+
+<div class="score">
+
+<div class="stats">
+	<h1>
+		Wins: <span id="winNum"> 0</span>
+	    Loses: <span id="lossNum"> 0</span>
+	    Ties: <span id="ties">0</span>
+	    <button class="hide" id="reset" onclick="resetGame()">Reset!</button>
+	</h1>
+</div>
+
+</div>
+
+</div>
+
+		
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+ <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

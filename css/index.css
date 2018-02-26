@@ -1,0 +1,176 @@
+
+
+#musicButton{
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/2000px-Speaker_Icon.svg.png);
+    height: 5em;
+    width: 5em;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-color: blueviolet;
+    border: none;
+    position: relative;
+    left: 20px;
+    bottom:10px;
+    
+}
+#musicButton:hover{
+    transform:scale(1.1);
+}
+#musicButton:active{
+    transform: translateY(1px);
+}
+.playMusic{
+    background-image: url(https://png.icons8.com/metro/1600/mute.png);
+}
+
+button{
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 2px 2px white;
+}
+
+
+
+
+#subText{
+    border-bottom:3px solid white;
+  
+    text-align: center;
+}
+
+
+  
+}
+.heartCrit{
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+
+.hearts{
+    border-bottom:3px solid black;
+   
+
+}
+
+
+img{
+	width: 50px;
+	height: 50px;
+    max-width: 100%;
+}
+
+#playbutton{
+    display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: black;
+  background-color:blueviolet;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 1px 6px grey;
+    
+}
+/*#playbutton:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite; 
+
+} */
+#playbutton:hover {background-color:rebeccapurple}
+
+#playbutton:active {
+  background-color:grey;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.playArea{
+    padding: 20px;
+    border-top: 2px solid black;
+}
+
+
+.hide{
+	display: none;
+}
+.show{
+	display: show;
+}
+.flavorText{
+   margin-top: 20px;
+    
+   border-top: 2px solid black;
+
+  
+	
+}
+
+
+
+
+ 
+    
+
+#rock,#paper,#scissors{
+    background-image: url(https://drive.google.com/uc?export=view&id=17i_dEIACd9TxrPEE13-jmzUrwpX5hsLt);
+    width: 100%;
+    height:150px;
+ background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-color: none;
+    border:none;
+    display: inline-block;
+    transition: all .2s ease-in-out;
+    content: center;
+    background-position: center;
+    
+}
+
+
+#paper{
+    background-image: url(https://drive.google.com/uc?export=view&id=16itAg-W_uQski7VUmWDyWZOIQo8IHZ6j);
+    
+}
+
+
+#scissors{
+    background-image: url(https://drive.google.com/uc?export=view&id=1zOXiERlG_bK0SGJmyf2j_S6_UWkWBMCQ);
+  
+}
+
+#paper:hover{
+transform: scale(1.1);
+}
+
+#rock:hover{
+    transform: scale(1.1)
+}
+
+#scissors:hover{
+    transform: scale(1.1);
+}
+
+.weaponChoice{
+  
+	margin: 10px;
+    padding: 10px;
+    
+}

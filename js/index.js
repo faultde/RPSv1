@@ -82,11 +82,6 @@ $("#musicButton").click(function() {
 		var flavorText = $("#flavorText").html();
 
 
-		//Show playbutton on weapon selection
-		choices.click(function(){
-			playButton.removeClass('hide').addClass('show');
-		});
-
 
 
 
@@ -128,6 +123,15 @@ scissors.click(function(event){
 });
 
 
+//Streak System
+
+function streak(){
+
+}
+
+function streakLoss(){
+
+}
 
 
 //Round Comparison
@@ -154,7 +158,7 @@ if (hearts > 0)
 			heartGain();
 			hearts++;
 			healthArr[hearts].removeClass("hide");
-			$("#heart1").removeClass("heartCrit");
+			$("#heart1").removeClass("heart1Shake");
 			alert("With no victor in sight, you rest and replenish a heart.");
 			console.log("With no victor in sight, you rest and replenish a heart.");
 		}
@@ -175,7 +179,7 @@ if (hearts > 0)
 				heartGain();
 				hearts++;
 				healthArr[hearts].removeClass("hide");
-				$("#heart1").removeClass("heartCrit");
+				$("#heart1").removeClass("heart1Shake");
 		alert("With 5 wins, you gain a heart back!");
 		console.log("With 5 wins, you gain a heart back!");
 
@@ -187,7 +191,7 @@ if (hearts > 0)
 		healthArr[2].removeClass("hide");
 		healthArr[1].removeClass("hide");
 		healthArr[0].removeClass("hide");
-		$("#heart1").removeClass("heartCrit");
+		$("#heart1").removeClass("heart1Shake");
 		alert("With 10 wins your almost done,all hearts replenished!");
 		console.log("With 10 wins your almost done, hearts replenished!");
 
@@ -214,7 +218,7 @@ if (hearts > 0)
 		loss.text(lose);
 		if (loseStreak === 3) {
 			$('#flavorText').text("Your weapon breaks from repeated use!");
-			paper.addClass("hide");
+			
 
 
 
@@ -254,15 +258,16 @@ function resetGame(){
 	healthArr[1].toggleClass("hide");
 	healthArr[2].toggleClass("hide");
 	healthArr[3].toggleClass("hide");
-	$("#heart1").removeClass("heartCrit");
-	$("#tryAgain").text("Charge Forward!");
+	$("#heart1").removeClass("heart1Shake");
+	$("#tryAgain").text("Play!");
 
 
 }
 
 //Make function that removes hearts
 function heartLoss(){
-	heartNeg();
+
+	heartNeg(); //Sound FX
 	hearts--;
 
 
@@ -282,7 +287,7 @@ function heartLoss(){
 			healthArr[3].addClass("hide");
 			healthArr[2].addClass("hide");
 			healthArr[1].addClass("hide");
-			$("#heart1").addClass("heartCrit");
+			$("#heart1").addClass("heart1Shake");
 			alert("You're down to 1 Heart!")
 			console.log("You're down to 1 Heart!");
 		}

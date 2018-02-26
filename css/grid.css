@@ -1,16 +1,9 @@
 
 
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-
-}
-
 body{
     text-align: center;
     font-family: 'Press Start 2P';
-    margin: auto;
+    margin:auto;
     
 }
 .container{
@@ -19,13 +12,14 @@ body{
     border-radius: 1%;
     background-color: wheat;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
    grid-template-areas: 
 " head head head "
 "main main main"
 "play play play"
 "score score score";
     align-items: center;
+    grid-gap:0px;
 }
 
 .head{
@@ -58,16 +52,32 @@ body{
 .play{
 	display: grid;
     grid-area:play;
-    padding: 20px;
+    padding-top: 50px;
+    padding-bottom: 40px;
     background-color: white;
     border: 5px solid black;
      margin:2px;
 }
-.score{
-	display: grid;
-    grid-area: score;
-    background-color: blueviolet;
-    padding: 20px;
-    border: 5px solid black;
-     margin:2px;
+
+
+
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+      h1{
+          color:red;
+      }
+
+}
+
+@media only screen 
+  and (max-device-width: 375px)  
+  and (-webkit-min-device-pixel-ratio: 3) { 
+       h1{
+          color:red;
+      }
+      
+
 }

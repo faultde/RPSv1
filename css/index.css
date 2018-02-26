@@ -1,10 +1,12 @@
 html{
   margin: 20px;
 }
+
 h1{
     text-shadow: 1px 2px white;
     font-size: 24px;
 }
+
 #musicButton{
     background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/2000px-Speaker_Icon.svg.png);
     height: 5em;
@@ -42,13 +44,11 @@ button{
     text-align: center;
 }
 
-
-  
-}
-.heartCrit{
-    animation: shake 0.5s;
+.heart1Shake{
+   animation: shake 0.5s;
     animation-iteration-count: infinite;
 }
+  
 
 @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
@@ -81,24 +81,18 @@ img{
 
 #playbutton{
     display: inline-block;
-  padding: 15px 25px;
+  padding: 15px 10px;
   font-size: 24px;
   cursor: pointer;
   text-align: center;
-  text-decoration: none;
-  outline: none;
   color: black;
   background-color:blueviolet;
   border: none;
-  border-radius: 15px;
+  border-radius: 20px;
   box-shadow: 1px 6px grey;
     
 }
-/*#playbutton:hover {
-    animation: shake 0.5s;
-    animation-iteration-count: infinite; 
 
-} */
 #playbutton:hover {background-color:rebeccapurple}
 
 #playbutton:active {
@@ -106,8 +100,9 @@ img{
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+
 .playArea{
-    padding: 20px;
+    padding-top: 10px;
     border-top: 2px solid black;
 }
 
@@ -115,15 +110,15 @@ img{
 .hide{
 	display: none;
 }
+
 .show{
 	display: show;
 }
-.flavorText{
-   margin-top: 20px;
-    
-   border-top: 2px solid black;
 
-  
+.flavorText{
+   margin-top: 10px;
+   border-top: 3px solid black;
+   font-size: 15px;
 	
 }
 
@@ -179,3 +174,10 @@ transform: scale(1.1);
     padding: 10px;
     
 }
+@media  screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+ 
+      
+      }

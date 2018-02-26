@@ -23,12 +23,9 @@ body{
    grid-template-areas: 
 " head head head "
 "main main main"
-". play ."
+"play play play"
 "score score score";
     align-items: center;
-    
-    
-    
 }
 
 .head{
@@ -36,17 +33,20 @@ body{
     grid-area: head;
     border: 3px solid black;
     background-color: blueviolet;
+    margin:2px;
   
     
 }
 
 .main{
 	display:grid;
-  grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-area: main;
     background-color: white;
     border: 4px solid black;
     grid-column-end:4;
+     margin:2px;
+    padding-top: 10px;
 
 }
 .flavorText{
@@ -61,6 +61,7 @@ body{
     padding: 20px;
     background-color: white;
     border: 5px solid black;
+     margin:2px;
 }
 .score{
 	display: grid;
@@ -68,4 +69,5 @@ body{
     background-color: blueviolet;
     padding: 20px;
     border: 5px solid black;
+     margin:2px;
 }

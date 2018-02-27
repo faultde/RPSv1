@@ -1,8 +1,4 @@
-		//RPS-v1
 
-
-
-		//WIP
 		var words = ["rock","paper","scissors"];
 		var computerChoice = 0;
 		var playerChoice = 0;
@@ -14,10 +10,9 @@
 
 
 		//Streak Bonuses
+		var music=1;
 		var winStreak=0;
 		var loseStreak=0;
-		var weaponStreak=0;
-		var music=1;
 
 		//Audio
 	window.onload = function() {
@@ -86,52 +81,40 @@ $("#musicButton").click(function() {
 
 
 
-	//Buttons **Weapon Choices** //
-
-
-
-		//ROCK
-
-rock.click(function(event){
-	playerChoice = event.target.id;
-	
-
-// make an array to prompt descripton of item
-$('#flavorText').text("An ancient tool, used for many purposes. A rock.");
-
-
-	return playerChoice;
-
-});
-		//Paper
-
-paper.click(function(event){
-	playerChoice = event.target.id;
-
-	$('#flavorText').text("A single sheet of paper, what will you do with it?");
-	return playerChoice;
-
-});
-		//Scissors
-
-scissors.click(function(event){
-	playerChoice = event.target.id;
-
-	$('#flavorText').text("Scissors, best used for cutting paper and your enemies!");
-	return playerChoice;
-
-});
 
 
 //Streak System
 
-function streak(){
+function wStreak(){
+	loseStreak=0;
+	if(winStreak<3){
+		winStreak++;
+	}
+	else{
+		console.log("That is 3 Wins");
+		winStreak=0;
+	}
 
 }
 
-function streakLoss(){
+function lStreak(){
+	winStreak=0;
+	if (loseStreak<3) {
+		loseStreak++;
+	}
+	else{
+		console.log("That is 3 Losses!")
+		loseStreak=0;
+	}
 
 }
+
+
+
+
+
+
+
 
 
 //Round Comparison
@@ -147,23 +130,31 @@ function playRound(){
 	}
 
 	else
+
 	//Check for Hearts
 if (hearts > 0)
 {
+			//TIES//
+
+
 	if(playerChoice === computerChoice){
 		$("#feedBack").text("No Victor Today!");
 		tie++;
 		$("#ties").text(tie);
+
+
 		if (tie == 5 && hearts<4) {
 			heartGain();
 			hearts++;
 			healthArr[hearts].removeClass("hide");
 			$("#heart1").removeClass("heart1Shake");
-			alert("With no victor in sight, you rest and replenish a heart.");
 			console.log("With no victor in sight, you rest and replenish a heart.");
 		}
 	}
-	
+
+			//WINS//
+
+
 	else if 
 	((playerChoice === "rock" && computerChoice === "scissors")
 	|| (playerChoice === "scissors" && computerChoice === "paper")
@@ -171,16 +162,22 @@ if (hearts > 0)
 	{ 
 		$("#feedBack").text("YOU EMERGE VICTORIOUS!");
 		win++;
-		loseStreak=0;
+		wStreak();
 		wins.text(win);
 		winSound();
 
+		//reset weapon streak
+		resetWeapon();
+
+
+	}
+
+
 	if (win === 5 && hearts<=2) {
-				heartGain();
-				hearts++;
-				healthArr[hearts].removeClass("hide");
-				$("#heart1").removeClass("heart1Shake");
-		alert("With 5 wins, you gain a heart back!");
+			heartGain();
+			hearts++;
+			healthArr[hearts].removeClass("hide");
+			$("#heart1").removeClass("heart1Shake");
 		console.log("With 5 wins, you gain a heart back!");
 
 
@@ -192,7 +189,6 @@ if (hearts > 0)
 		healthArr[1].removeClass("hide");
 		healthArr[0].removeClass("hide");
 		$("#heart1").removeClass("heart1Shake");
-		alert("With 10 wins your almost done,all hearts replenished!");
 		console.log("With 10 wins your almost done, hearts replenished!");
 
 	}
@@ -204,9 +200,10 @@ if (hearts > 0)
 
 
 
-	} 
+	
 
-	// HEARTS 
+		//Losses//
+
 	else if 
 	((computerChoice === "rock" && playerChoice === "scissors")
 	|| (computerChoice === "scissors" && playerChoice === "paper")
@@ -214,18 +211,9 @@ if (hearts > 0)
 	{
 		$("#feedBack").fadeIn('3000').text("A PAINFUL DEFEAT!");
 		lose++;
-		loseStreak++;
+		lStreak();
 		loss.text(lose);
-		if (loseStreak === 3) {
-			$('#flavorText').text("Your weapon breaks from repeated use!");
-			
-
-
-
-
-		}
-
-		else
+		weaponBreakFunc();
 
 
 		//Heart Removal Function
@@ -247,6 +235,12 @@ else {
 
 //Reset Button
 function resetGame(){
+	 rockBreak=0;
+	 paperBreak=0;
+	 scissorBreak=0;
+	 weaponBreak=0;
+	 resetImage();
+
 	win = 0;
 	wins.text(0);
 	lose = 0;
@@ -262,6 +256,9 @@ function resetGame(){
 	$("#tryAgain").text("Play!");
 
 
+
+
+
 }
 
 //Make function that removes hearts
@@ -274,13 +271,13 @@ function heartLoss(){
 	if (hearts === 3) {
 			healthArr[3].addClass("hide");
 
-			alert("3 Hearts!")
+			
 			console.log("3 Hearts!");
 		}
 	if (hearts === 2) {
 			healthArr[3].addClass("hide");
 			healthArr[2].addClass("hide");
-			alert("2 Hearts!")
+	
 			console.log("2 hearts!");
 		}
 		else if (hearts === 1) {
@@ -288,7 +285,7 @@ function heartLoss(){
 			healthArr[2].addClass("hide");
 			healthArr[1].addClass("hide");
 			$("#heart1").addClass("heart1Shake");
-			alert("You're down to 1 Heart!")
+
 			console.log("You're down to 1 Heart!");
 		}
 		else if (hearts === 0) {
@@ -297,14 +294,13 @@ function heartLoss(){
 			healthArr[1].addClass("hide");
 			healthArr[0].addClass("hide");
 
-			alert("Oh no!, you are out of hearts!")
 			console.log("Oh no!, you are out of hearts!");
 			$("#tryAgain").text("Try Again?");
 		}
 		
 }
 
-//Make function that gains hearts
+
 
 //Computer Generated Selection 
 /*** -DONE- DO NOT TOUCH ***/

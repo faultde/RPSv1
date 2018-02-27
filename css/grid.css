@@ -23,7 +23,7 @@ body{
 }
 
 .head{
-	display: grid;
+	  display: grid;
     grid-area: head;
     border: 3px solid black;
     background-color: blueviolet;
@@ -33,7 +33,7 @@ body{
 }
 
 .main{
-	display:grid;
+	  display:grid;
     grid-template-columns: repeat(3, 1fr);
     grid-area: main;
     background-color: white;

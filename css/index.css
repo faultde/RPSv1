@@ -128,11 +128,10 @@ img{
  
     
 
-#rock,#paper,#scissors{
-    background-image: url(https://drive.google.com/uc?export=view&id=17i_dEIACd9TxrPEE13-jmzUrwpX5hsLt);
+.weapon{
     width: 100%;
     height:150px;
- background-size: contain;
+    background-size: contain;
     background-repeat: no-repeat;
     overflow: hidden;
     background-color: none;
@@ -145,13 +144,23 @@ img{
 }
 
 
-#paper{
+
+.rock1{
+  background-image: url(https://drive.google.com/uc?export=view&id=17i_dEIACd9TxrPEE13-jmzUrwpX5hsLt);
+
+}
+
+.rock2{
+  background-image: url(https://s3.us-east-2.amazonaws.com/rpsv1/pet-rock.png)
+}
+
+.paper1{
     background-image: url(https://drive.google.com/uc?export=view&id=16itAg-W_uQski7VUmWDyWZOIQo8IHZ6j);
     
 }
 
 
-#scissors{
+.scissors1{
     background-image: url(https://drive.google.com/uc?export=view&id=1zOXiERlG_bK0SGJmyf2j_S6_UWkWBMCQ);
   
 }

@@ -1,10 +1,13 @@
 html{
-  margin: 20px;
+  margin: 5px 20px;
 }
 
 h1{
     text-shadow: 1px 2px white;
-    font-size: 24px;
+    font-size: 2em;
+}
+.stats{
+    font-size: 10px;
 }
 
 #musicButton{
@@ -76,33 +79,33 @@ button{
 img{
 	width: 50px;
 	height: 50px;
-    max-width: 100%;
 }
 
 #playbutton{
     display: inline-block;
+    margin-top:20px;
   padding: 15px 10px;
   font-size: 24px;
   cursor: pointer;
   text-align: center;
   color: black;
-  background-color:blueviolet;
-  border: none;
+  background-color:rebeccapurple;
+  border: 2px solid white;
   border-radius: 20px;
-  box-shadow: 1px 6px grey;
+  box-shadow: 1px 6px black;
     
 }
 
 #playbutton:hover {background-color:rebeccapurple}
 
 #playbutton:active {
-  background-color:grey;
-  box-shadow: 0 5px #666;
+  background-color:rebeccapurple;
+  box-shadow: 0 5px white;
   transform: translateY(4px);
 }
 
 .playArea{
-    padding-top: 10px;
+
     border-top: 2px solid black;
 }
 
@@ -118,8 +121,7 @@ img{
 .flavorText{
    margin-top: 10px;
    border-top: 3px solid black;
-   font-size: 15px;
-	
+   font-size:15px;
 }
 
 
@@ -130,7 +132,7 @@ img{
 
 .weapon{
     width: 100%;
-    height:150px;
+    height: 14em;
     background-size: contain;
     background-repeat: no-repeat;
     overflow: hidden;
@@ -140,6 +142,8 @@ img{
     transition: all .2s ease-in-out;
     content: center;
     background-position: center;
+    padding-top: none;
+    margin-top:none;
     
 }
 
@@ -177,16 +181,4 @@ transform: scale(1.1);
     transform: scale(1.1);
 }
 
-.weaponChoice{
-  
-	margin: 10px;
-    padding: 10px;
-    
-}
-@media  screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2) {
- 
-      
-      }
+

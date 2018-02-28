@@ -62,6 +62,7 @@ $("#musicButton").click(function() {
 		var heart2 = $("#heart2");
 		var heart3 = $("#heart3");
 		var heart4 = $("#heart4");
+		var heart5 = $("#heart5");
 
 		var healthArr = [heart1,heart2,heart3,heart4];
 
@@ -126,7 +127,8 @@ function playRound(){
 	//Check for player selection
 	if(playerChoice===0){
 		$("#feedBack").text("No weapon selected!");
-
+		
+		
 	}
 
 	else
@@ -139,11 +141,12 @@ if (hearts > 0)
 
 	if(playerChoice === computerChoice){
 		$("#feedBack").text("No Victor Today!");
-		tie++;
+		
+				tie++;
 		$("#ties").text(tie);
 
 
-		if (tie == 5 && hearts<4) {
+		if (tie % 5 == 0 && hearts<4) {
 			heartGain();
 			hearts++;
 			healthArr[hearts].removeClass("hide");
@@ -161,19 +164,22 @@ if (hearts > 0)
 	|| (playerChoice === "paper" && computerChoice === "rock")) 
 	{ 
 		$("#feedBack").text("YOU EMERGE VICTORIOUS!");
-		win++;
+		
+				win++;
 		wStreak();
 		wins.text(win);
 		winSound();
 
+
 		//reset weapon streak
 		resetWeapon();
+		weaponSkins();
 
 
 	}
 
 
-	if (win === 5 && hearts<=2) {
+	if (win % 5 === 0 && hearts<=2) {
 			heartGain();
 			hearts++;
 			healthArr[hearts].removeClass("hide");
@@ -210,7 +216,8 @@ if (hearts > 0)
 	|| (computerChoice === "paper" && playerChoice === "rock")) 
 	{
 		$("#feedBack").fadeIn('3000').text("A PAINFUL DEFEAT!");
-		lose++;
+
+				lose++;
 		lStreak();
 		loss.text(lose);
 		weaponBreakFunc();

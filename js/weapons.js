@@ -2,7 +2,7 @@
 
 
 	$("#rock2").click(function (event){
-		$("#rock").removeClass("rock1").addClass("rock2");
+		$("#rock").css("background-image","url(https://s3.us-east-2.amazonaws.com/rpsv1/pet-rock.png)")
 		$('#flavorText').text(rock2.text);
 
 
@@ -10,11 +10,28 @@
 	});
 
 	$("#rock1").click(function (event){
-		$("#rock").removeClass("rock2").addClass("rock1");
+		$("#rock").css("background-image","url(https://drive.google.com/uc?export=view&id=17i_dEIACd9TxrPEE13-jmzUrwpX5hsLt)")
 		$('#flavorText').text(rock1.text);
 
 
 	});
+
+
+
+	//Skins Function//
+
+function weaponSkins(){
+	if(win===10){
+		$("#rock2").removeClass("hide");
+		alert("You have unlocked a new rock!")
+	}
+	else{
+		return win
+	}
+
+
+}
+
 
 
 		//Rock//
@@ -28,7 +45,8 @@ rock.click(function(event){
 	else{
 
 // make an array to prompt descripton of item
-$('#flavorText').text(rock1.text);
+
+$('#flavorText').text(this.text);
 
 
 
@@ -58,7 +76,7 @@ var rock2 = {
 
 paper.click(function(event){
 	playerChoice = event.target.id;
-	if (paperBreak===3 || weaponBreak ===1) {
+	if (paperBreak===3) {
 		brokenWeapon();
 	}
 	else{
@@ -125,14 +143,14 @@ var scissors2 = {
 function weaponBreakFunc(){
 	
 	if(playerChoice === "rock"){
-		paperBreak=0;
-		scissorBreak=0
+		
 		rockBreak++;
 
-		if(rockBreak===3 || weaponBreak===1){
+		if(rockBreak===3){
 			$("#rock").css("background-image","url(https://grist.files.wordpress.com/2013/03/wrong.png?w=330&h=224)");
 			$('#flavorText').text("You can no longer use this weapon!");
 			weaponBreak =1;
+			playerChoice=0;
 			
 			
 
@@ -146,13 +164,13 @@ function weaponBreakFunc(){
 
 	else if(playerChoice ==="paper"){
 		paperBreak++;
-		scissorBreak=0;
-		rockBreak=0;
+		
 
-		if (paperBreak===3||weaponBreak===1) {
+		if (paperBreak===3) {
 			$("#paper").css("background-image","url(https://grist.files.wordpress.com/2013/03/wrong.png?w=330&h=224)");
 			$('#flavorText').text("You can no longer use this weapon!");
 			weaponBreak =1;
+			playerChoice=0;
 			
 
 			return weaponBreak;
@@ -166,14 +184,14 @@ function weaponBreakFunc(){
 
 	else{
 		scissorBreak++;
-		rockBreak=0;
-		paperBreak=0;
+		
 		if (scissorBreak===3) {
 			$("#scissors").css("background-image","url(https://grist.files.wordpress.com/2013/03/wrong.png?w=330&h=224)");
 			$('#flavorText').text("You can no longer use this weapon!");
 		
 
 			weaponBreak = 1;
+			playerChoice=0;
 
 			return weaponBreak;
 		}

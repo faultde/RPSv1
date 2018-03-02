@@ -14,6 +14,12 @@
 		var winStreak=0;
 		var loseStreak=0;
 
+		//Skin Rewards
+		var RockWin = 0;
+		var PaperWin = 0;
+		var ScissorWin = 0;
+
+
 		//Audio
 	window.onload = function() {
     document.getElementById("bgm").play();
@@ -84,31 +90,7 @@ $("#musicButton").click(function() {
 
 
 
-//Streak System
 
-function wStreak(){
-	loseStreak=0;
-	if(winStreak<3){
-		winStreak++;
-	}
-	else{
-		console.log("That is 3 Wins");
-		winStreak=0;
-	}
-
-}
-
-function lStreak(){
-	winStreak=0;
-	if (loseStreak<3) {
-		loseStreak++;
-	}
-	else{
-		console.log("That is 3 Losses!")
-		loseStreak=0;
-	}
-
-}
 
 
 
@@ -128,10 +110,12 @@ function playRound(){
 	if(playerChoice===0){
 		$("#feedBack").text("No weapon selected!");
 		
-		
+
 	}
 
 	else
+
+
 
 	//Check for Hearts
 if (hearts > 0)
@@ -162,11 +146,27 @@ if (hearts > 0)
 	((playerChoice === "rock" && computerChoice === "scissors")
 	|| (playerChoice === "scissors" && computerChoice === "paper")
 	|| (playerChoice === "paper" && computerChoice === "rock")) 
-	{ 
+	{  
+		
+			//Check Win Type
+		if (playerChoice === "rock") {
+		RockWin++;
+	}
+		else if (playerChoice === "paper") {
+		PaperWin++;
+
+
+	}
+		else{
+		ScissorWin++;
+	}
+
+
+
 		$("#feedBack").text("YOU EMERGE VICTORIOUS!");
 		
-				win++;
-		wStreak();
+		win++;
+		console.log("win");
 		wins.text(win);
 		winSound();
 
@@ -179,7 +179,7 @@ if (hearts > 0)
 	}
 
 
-	if (win % 5 === 0 && hearts<=2) {
+	if (win % 5 === 0 && hearts<=1) {
 			heartGain();
 			hearts++;
 			healthArr[hearts].removeClass("hide");
@@ -187,8 +187,8 @@ if (hearts > 0)
 		console.log("With 5 wins, you gain a heart back!");
 
 
-		}
-	else if (win === 10 && hearts<=3) {
+		} //move ahead
+	else if (win === 10 && hearts<=1) {
 		hearts = 4;
 		healthArr[3].removeClass("hide");
 		healthArr[2].removeClass("hide");
@@ -198,10 +198,7 @@ if (hearts > 0)
 		console.log("With 10 wins your almost done, hearts replenished!");
 
 	}
-	else if( win  > 15)
-	{
-		alert("Give yourself a break!")
-	}
+	
 
 
 
@@ -218,7 +215,7 @@ if (hearts > 0)
 		$("#feedBack").fadeIn('3000').text("A PAINFUL DEFEAT!");
 
 				lose++;
-		lStreak();
+				console.log("loss");
 		loss.text(lose);
 		weaponBreakFunc();
 
@@ -233,7 +230,6 @@ if (hearts > 0)
 }
 
 else {
-	alert("You ready your " + playerChoice)
 	resetGame();
 }
 
@@ -261,6 +257,7 @@ function resetGame(){
 	healthArr[3].toggleClass("hide");
 	$("#heart1").removeClass("heart1Shake");
 	$("#tryAgain").text("Play!");
+	$("#RPS").text("Rock, Paper, Scissors!");
 
 
 
@@ -303,6 +300,7 @@ function heartLoss(){
 
 			console.log("Oh no!, you are out of hearts!");
 			$("#tryAgain").text("Try Again?");
+			$("#RPS").text("Game Over!");
 		}
 		
 }
